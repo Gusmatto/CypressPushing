@@ -2,8 +2,8 @@ name: 'Manual'
 on:
   workflow_dispatch:
     inputs:
-      modulo:
-        description: 'modulo folder'
+      module:
+        description: 'module folder'
         default: "**"
         required: true
       scenario:
