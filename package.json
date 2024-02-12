@@ -1,0 +1,12 @@
+{
+  "name": "cypressudemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open --e2e -b electron",
+    "onlineShop": "npx cypress run --spec 'cypress/e2e/online-shop/**/**cy.js*'"
+  },
+  "author": "",
+  "license": "ISC"
+}
