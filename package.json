@@ -1,12 +1,19 @@
 {
-  "name": "cypressudemy",
+  "name": "avanzado",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open --e2e -b electron",
-    "onlineShop": "npx cypress run --spec 'cypress/e2e/online-shop/**/**cy.js*'"
+    "onlineShop": "npx cypress run --spec 'cypress/e2e/online-shop/**/**.cy.js*'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gusmatto/CypressPushing.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.4"
+  }
 }
