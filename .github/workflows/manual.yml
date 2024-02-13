@@ -2,8 +2,8 @@ name: 'Manual'
 on:
   workflow_dispatch:
     inputs:
-      modulo:
-        description: 'modulo folder'
+      module:
+        description: 'module folder'
         default: "**"
         required: true
       scenario:
@@ -11,15 +11,15 @@ on:
         default: "**"
         required: true
 jobs:
-    record-run-specs-for-account-manually:
-      runs-on: ubuntulatest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-        - name: Cypress run
-          uses: cypress-io/github-actions@v5
-          with:
-            command: npx cypress run --spec cypress/e2e/${{inputs.module}}/${{inputs.scenario}}/spec.cy.js --browser chrome
+  record-run-specs-for-account-manually:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npx cypress run --spec cypress/e2e/${{inputs.module}}/${{inputs.scenario}}/spec.cy.js --browser chrome
         
       
           
