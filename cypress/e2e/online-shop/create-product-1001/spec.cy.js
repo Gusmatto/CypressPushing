@@ -9,6 +9,7 @@ describe(`${scenarioName} - ${module}`, () => {
         cy.fixture(`${module}/${scenarioName}-${testCaseId}/${testCaseId}`).then(data => {
             data.product = `${data.product}-{testCaseId}`;
             cy.log(`Create a product number ${testCaseId}`);
+            cy.log('updated')
         });
     });
 });
