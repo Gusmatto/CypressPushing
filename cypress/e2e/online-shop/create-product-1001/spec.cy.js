@@ -14,27 +14,42 @@ describe(`${scenarioName} - ${module}`, () => {
 
             // Login 
             cy.visit(Cypress.config().baseUrl);
-            LoginPage.getLoginToggle().should('have.text', 'Iniciá sesión');
-            LoginPage.getLoginToggle().dblclick();
-            LoginPage.getUserInputField().type(data.user);
-            LoginPage.getPasswordInputField().type(data.password);
-            LoginPage.getLoginButton().click();
+            cy.intercept('POST', 'api/login').as('loginRequest');
+            cy.getDataCy('registertoggle').should('have.text', 'Iniciá sesión');
+            cy.getDataCy('registertoggle').dblclick();
+            cy.login(data.user, data.password);
 
             // Home
+            cy.wait('@loginRequest', { timeout: 20000 });
             HomePage.getWelcomeText().should('contain', `Welcome ${data.user}`);
-            HomePage.getOnlineShopLink().click();
+            cy.getDataCy('onlineshoplink').click();
 
-            // Products
+            // Create product
+            cy.intercept('POST', 'api/create-product').as('createProduct');
             ProductsPage.getProductsTitle().should('have.text', 'Products');
-            ProductsPage.getAddProductButton().click();
+            cy.getDataCy('add-product').click();
             ProductsPage.getCreateProductModal().should('have.text', 'Create Product');
-            ProductsPage.getProductNameInput().type(data.productName);
-            ProductsPage.getProductPriceInput().type(data.productPrice);
-            ProductsPage.getProductImageUrlInput().type(data.productImageUrl);
-            ProductsPage.getProductIdInput().type(data.productID);
-            ProductsPage.getCreateProductButton().click();
+            cy.getDataCy('productName').type(data.productName);
+            cy.getDataCy('productPrice').type(data.productPrice);
+            cy.getDataCy('productCard').type(data.productImageUrl);
+            cy.getDataCy('productID').type(data.productID);
+            cy.getDataCy('createProduct').click();
+            // cy.wait('@createProduct', { timeout: 25000 }).its('response.statusCode').should('be.equal', 201);
+            ProductsPage.getCloseModalButton().click();
 
-            cy.log(`Create a product number ${testCaseId}`);
+            // Search product
+            cy.getDataCy('search-type').select('id');
+            cy.getDataCy('search-bar').type(data.productID).type('{enter}');
+
+            // Delete product created
+            cy.getDataCy('delete-5678').click();
+            ProductsPage.getProductDeleteMessage().should('be.visible');
+            ProductsPage.getDeleteProductButton().click();
+            cy.contains(`${data.productName} has been deleted`).should('be.visible');
+            ProductsPage.getCloseModalButton().click();
+            cy.getDataCy('search-type').select('id');
+            cy.getDataCy('search-bar').clear().type(data.productID).type('{enter}');
+            cy.get('p').contains('Zapatillas Negras').should('not.exist');
         });
     });
 });
