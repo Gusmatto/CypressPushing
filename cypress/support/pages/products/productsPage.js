@@ -6,31 +6,19 @@ export const ProductsPage = {
         return cy.contains('Products');
     },
 
-    getAddProductButton() {
-        return cy.get('[data-cy="add-product"]');
-    },
-
     getCreateProductModal() {
         return cy.contains('Create Product');
     },
 
-    getProductNameInput() {
-        return cy.get('[data-cy="productName"]');
+    getCloseModalButton() {
+        return cy.get('[id="closeModal"]');
     },
 
-    getProductPriceInput() {
-        return cy.get('[data-cy="productPrice');
+    getProductDeleteMessage() {
+        return cy.contains('Are you sure you want to delete Zapatillas Negras?');
     },
 
-    getProductImageUrlInput() {
-        return cy.get('[data-cy="productCard');
-    },
-
-    getProductIdInput() {
-        return cy.get('[data-cy="productID');
-    },
-
-    getCreateProductButton() {
-        return cy.get('[data-cy="createProduct');
+    getDeleteProductButton() {
+        return cy.get('[id="saveEdit"]');
     }
 }

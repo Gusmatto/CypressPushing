@@ -1,8 +1,9 @@
 {
     "user": "pushingit",
     "password": "123456!",
-    "productName": "Gorra Negra",
+    "productName": "Zapatillas Negras",
     "productPrice": "25.50",
-    "productImageUrl": "https://www.google.com/imgres?imgurl=https%3A%2F%2Facdn.mitiendanube.com%2Fstores%2F001%2F338%2F510%2Fproducts%2Fcap_babolat_basic_logo_black_11-e4e0e3dc366f0fa9b616352584201616-480-0.jpg&tbnid=eI_vHnGiuRFeIM&vet=12ahUKEwjsmPb346uEAxXoS7gEHVDeCRMQMygBegQIARB3..i&imgrefurl=https%3A%2F%2Fwww.babolat.com.ar%2Fproductos%2Fgorra-basic-logo-black%2F&docid=t14AsBVD7HBP3M&w=480&h=480&q=gorra&ved=2ahUKEwjsmPb346uEAxXoS7gEHVDeCRMQMygBegQIARB3",
+    "productImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2LyZpq9glBERe_Wz6u5kldIaf1ap8Q0ntsg&usqp=CAU",
     "productID": "5678"
+    
 }
