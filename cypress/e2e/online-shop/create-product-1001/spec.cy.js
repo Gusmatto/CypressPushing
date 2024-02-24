@@ -8,20 +8,15 @@ import { ProductsPage  } from '../../../support/pages/products/productsPage';
 
 describe(`${scenarioName} - ${module}`, () => {
 
+    before(() => {
+        cy.login(Cypress.env().user, Cypress.env().pass);
+        cy.visit('');
+    });
+
+
     it('should be able to create a product', () => {
         cy.fixture(`${module}/${scenarioName}-${testCaseId}/${testCaseId}`).then(data => {
             data.product = `${data.product}-{testCaseId}`;
-
-            // Login 
-            cy.visit(Cypress.config().baseUrl);
-            cy.intercept('POST', 'api/login').as('loginRequest');
-            cy.getDataCy('registertoggle').should('have.text', 'Iniciá sesión');
-            cy.getDataCy('registertoggle').dblclick();
-            cy.login(data.user, data.password);
-
-            // Home
-            cy.wait('@loginRequest', { timeout: 20000 });
-            HomePage.getWelcomeText().should('contain', `Welcome ${data.user}`);
             cy.getDataCy('onlineshoplink').click();
 
             // Create product

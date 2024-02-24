@@ -14,7 +14,17 @@ Cypress.Commands.add('getDataCy', (value) => {
   });
 
   Cypress.Commands.add('login', (username, password) => {
-    cy.getDataCy('user').type(username);
-    cy.getDataCy('pass').type(password);
-    cy.getDataCy('submitForm').click();
+    cy.request({
+      method: "POST",
+      url: `${Cypress.env().baseUrlApi}/login`,
+      body: {
+          username: username,
+          password: password
+      },
+    }).then(response => {
+        window.localStorage.setItem('token', response.body.token);
+        window.localStorage.setItem('user', response.body.user.user);
+        window.localStorage.setItem('userId', response.body.user._id);
+        Cypress.env().token = response.body.token;
+    });
   });
