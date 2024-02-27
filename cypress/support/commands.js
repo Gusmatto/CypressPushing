@@ -12,8 +12,8 @@
 
 import './requests/products'
 
-Cypress.Commands.add('getDataCy', (value) => {
-    return cy.get(`[data-cy="${value}"]`);
+Cypress.Commands.add('getDataCy', (selector) => {
+    return cy.get(`[data-cy="${selector}"]`);
   });
 
   Cypress.Commands.add('login', (username, password) => {
