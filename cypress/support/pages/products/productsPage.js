@@ -1,24 +1,16 @@
-/// <reference types="Cypress" />
 
-export const ProductsPage = {
-
-    getProductsTitle() {
-        return cy.contains('Products');
-    },
-
-    getCreateProductModal() {
-        return cy.contains('Create Product');
-    },
-
-    getCloseModalButton() {
-        return cy.get('[id="closeModal"]');
-    },
-
-    getProductDeleteMessage() {
-        return cy.contains('Are you sure you want to delete Zapatillas Negras?');
-    },
-
-    getDeleteProductButton() {
-        return cy.get('[id="saveEdit"]');
+export class ProductsPage {
+    constructor() {
+        this.onlineShopLink = 'onlineshoplink',
+        this.addProduct = 'add-product',
+        this.productName = 'productName',
+        this.productPrice = 'productPrice',
+        this.productCard = 'productCard',
+        this.productId = 'productID',
+        this.createProduct = 'createProduct',
+        this.productsTitle = 'Products',
+        this.closeModalButton = '[id="closeModal"]',
+        this.productDeleteMessage = 'Are you sure you want to delete Zapatillas Negras?',
+        this.deleteButton = '[id="saveEdit"]'
     }
 }
