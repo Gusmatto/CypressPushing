@@ -24,3 +24,25 @@ Cypress.Commands.add('createProduct', (body) => {
         body: body,
     });
 });
+
+Cypress.Commands.add('getProductByName', (productName) => {
+    cy.request({
+        method: "GET",
+        url: `${Cypress.env().baseUrlApi}/products?name=${productName}`,
+        failsOnStatusCode: false,
+        headers: {
+            Authorization: `Bearer ${Cypress.env().token}`
+        }
+    })
+});
+
+Cypress.Commands.add('updateProductData', (product, body) => {
+    cy.request({
+        method: "PUT",
+        url: `${Cypress.env().baseUrlApi}/product/${product._id}`,
+        body: body,
+        headers: {
+            Authorization: `Bearer ${Cypress.env().token}`
+        }
+    })
+})

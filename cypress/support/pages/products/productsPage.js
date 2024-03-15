@@ -11,6 +11,21 @@ export class ProductsPage {
         this.productsTitle = 'Products',
         this.closeModalButton = '[id="closeModal"]',
         this.productDeleteMessage = 'Are you sure you want to delete Zapatillas Negras?',
-        this.deleteButton = '[id="saveEdit"]'
+        this.deleteButton = '[id="saveEdit"]',
+        this.name = 'name',
+        this.price = 'price',
+        this.addToCart = '[data-cy*="add-to-cart-"]',
+        this.closeModal = 'closeModal',
+        this.goShoppingCart = 'goShoppingCart',
+        this.productAmount = 'productAmount',
+        this.unitPrice = 'unitPrice',
+        this.totalPrice = 'totalPrice',
+        this.searchType = 'search-type',
+        this.searchBar = 'search-bar',
+        this.goCheckout = 'goCheckout',
+        this.firstName = 'firstName',
+        this.lastName = 'lastName',
+        this.cardNumber = 'cardNumber',
+        this.purchase = 'purchase'
     }
 }

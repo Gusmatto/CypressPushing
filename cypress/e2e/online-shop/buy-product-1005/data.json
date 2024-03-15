@@ -1,0 +1,19 @@
+{
+    "product1": {
+        "name": "Sandalias",
+        "price": 34,
+        "img": "https://www.moov.com.ar/zuecos-birkenstock-super-birki-unisex/BKB11058000550.html",
+        "id": 7384346
+    },
+    "product2": {
+        "name": "Zapatillas Negras y Blancas",
+        "price": 32,
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwb85e5e28/products/ADID6278/ADID6278-2.JPG",
+        "id": 78984636
+    },
+    "checkout": {
+        "firstName": "Narciso",
+        "lastName": "Laprida",
+        "cardNumber": 6868394267309528
+    }
+}
