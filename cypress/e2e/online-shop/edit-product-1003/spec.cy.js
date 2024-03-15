@@ -14,6 +14,10 @@ describe(`${scenarioName} - ${module}`, () => {
         cy.fixture(`${module}/${scenarioName}-${testCaseId}/data`).then(data => {
             cy.deleteProduct(data.product.id);
             cy.createProduct(data.product);
+            cy.getProductByName(data.product.name).then(
+                
+            );
+            
             cy.getDataCy('onlineshoplink').click();
             cy.getDataCy('search-type').select('ID');
             cy.getDataCy('search-bar').type(`${data.product.id} {enter}`);

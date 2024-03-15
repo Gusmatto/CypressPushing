@@ -4,5 +4,10 @@
         "price": 25.50,
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2LyZpq9glBERe_Wz6u5kldIaf1ap8Q0ntsg&usqp=CAU",
         "id": 5678
+    },
+    "productUpdated": {
+        "name": "Zapatillas Negras y Blancas",
+        "price": 32,
+        "img": "https://www.moov.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwb85e5e28/products/ADID6278/ADID6278-2.JPG"
     }
 }
