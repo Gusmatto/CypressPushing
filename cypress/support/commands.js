@@ -11,6 +11,7 @@
 //
 
 import './requests/products'
+import './assertions/purchaseModel'
 
 Cypress.Commands.add('getDataCy', (selector) => {
     return cy.get(`[data-cy="${selector}"]`);
