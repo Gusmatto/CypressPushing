@@ -45,6 +45,10 @@ describe(`${scenarioName} - ${module}`, () => {
                cy.task("connectDB", query).then(result => {
                   expect(result[0].id).to.equal(interception.response.body.product.sellid);
                   cy.contains('Purchase has been completed successfully').should('be.visible');
+                  expect(result[0].firstName).to.equal(interception.response.body.product.firstName);
+                  expect(result[0].lastName).to.equal(interception.response.body.product.lastName);
+                  expect(result[0].product).to.equal(interception.response.body.product.products[0].product);
+                  expect(result[1].product).to.equal(interception.response.body.product.products[1].product);
                })  
             });
         });
