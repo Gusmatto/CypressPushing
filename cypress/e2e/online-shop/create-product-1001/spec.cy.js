@@ -27,14 +27,14 @@ describe(`${scenarioName} - ${module}`, () => {
             cy.getDataCy(productPage.productCard).type(data.productImageUrl);
             cy.getDataCy(productPage.productId).type(data.productID);
             cy.getDataCy(productPage.createProduct).click();
-            cy.get(productPage.closeModalButton).click();
+            // cy.get(productPage.closeModalButton).click();
 
             // Search product
             cy.getDataCy('search-type').select('id');
             cy.getDataCy('search-bar').type(data.productID).type('{enter}');
 
             // Delete product created
-            cy.getDataCy('delete-5678').click();
+            cy.getDataCy('delete-5678').click( {force: true} );
             cy.contains(productPage.productDeleteMessage).should('be.visible');
             cy.get(productPage.deleteButton).click();
             cy.contains(`${data.productName} has been deleted`).should('be.visible');
