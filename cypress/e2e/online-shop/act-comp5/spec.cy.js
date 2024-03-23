@@ -21,21 +21,21 @@ describe(`${scenarioName} - ${module} `, () => {
         cy.get('[id="add-to-cart-1000"]').click()
         cy.getDataCy('closeModal').click()
         cy.getDataCy('goShoppingCart').click()
+        cy.getDataCy('goBillingSummary').click()
         cy.getDataCy('goCheckout').click()
-        cy.getDataCy('firstName').type(this.data.name)
-        cy.getDataCy('lastName').type(this.data.lastName)
-        cy.getDataCy('cardNumber').type(this.data.cardNumber)
+        cy.getDataCy('firstName').type("Narciso")
+        cy.getDataCy('lastName').type("Laprida")
+        cy.getDataCy('cardNumber').type("1234512345123451")
         cy.getDataCy('purchase').click()
         cy.getDataCy('thankYou').should('be.visible')
         //Crear un custom command para verificar nombre y apellido, producto y cantidad, tarjeta y precio total
         //
-        cy.verifyPurchase(2, this.data.name);
-        cy.verifyPurchase(2, this.data.lastName);
-        cy.verifyPurchase(3, this.data.quantity);
-        cy.verifyPurchase(3, this.data.product);
-        cy.verifyPurchase(4, this.data.cardNumber);
-        cy.verifyPurchase(6, `$${this.data.totalPrice}`);
-
+        cy.verifyPurchase({
+            'name': 'Narciso Laprida',
+            'Buzo Negro': '1 x Buzo Negro',
+            'creditCard': '1234512345123451',
+            'totalPrice': '$23.76'
+        })
 
     });
 });
