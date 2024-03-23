@@ -22,6 +22,7 @@ export class ProductsPage {
         this.totalPrice = 'totalPrice',
         this.searchType = 'search-type',
         this.searchBar = 'search-bar',
+        this.goBillingSummary = 'goBillingSummary',
         this.goCheckout = 'goCheckout',
         this.firstName = 'firstName',
         this.lastName = 'lastName',

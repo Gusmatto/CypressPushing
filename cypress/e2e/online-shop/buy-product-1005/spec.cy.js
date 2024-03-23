@@ -31,8 +31,9 @@ describe(`${scenarioName} - ${module}`, () => {
             cy.get('[data-cy="add-to-cart-78984636"]').click();
             cy.getDataCy(productPage.closeModal).click();
             cy.get('[data-cy="add-to-cart-78984636"]').click();
-            cy.getDataCy(productPage.closeModal).click();
+            cy.getDataCy(productPage.closeModal).click(); 
             cy.getDataCy(productPage.goShoppingCart).click();
+            cy.getDataCy(productPage.goBillingSummary).click();
             cy.getDataCy(productPage.goCheckout).click();
 
             cy.getDataCy(productPage.firstName).type(data.checkout.firstName);
