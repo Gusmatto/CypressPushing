@@ -1,0 +1,21 @@
+{
+    "product1": {
+        "name": "Aromatizador",
+        "quantity": 2,
+        "price": 27,
+        "img": "https://www.moov.com.ar/aromatizador-shoter-freshener/SR3817.html",
+        "id": 7000787
+    },
+    "product2": {
+        "name": "Mochila Negra",
+        "quantity": 2,
+        "price": 34,
+        "img": "https://www.moov.com.ar/mochila-puma-core-pop/PU079855-01.html",
+        "id": 8790434
+    },
+    "billing": {
+        "subtotal": "$122",
+        "freight": "Free",
+        "totalPrice": "$122"
+    }
+}
