@@ -12,12 +12,14 @@
 
 import './requests/products'
 import './assertions/purchaseModel'
+import './assertions/shopingCartModel'
 
 Cypress.Commands.add('getDataCy', (selector) => {
     return cy.get(`[data-cy="${selector}"]`);
   });
 
-  Cypress.Commands.add('login', (username, password) => {
+Cypress.Commands.add('login', (username, password) => {
+  cy.session('loginWithSession', () => {
     cy.request({
       method: "POST",
       url: `${Cypress.env().baseUrlApi}/login`,
@@ -31,4 +33,5 @@ Cypress.Commands.add('getDataCy', (selector) => {
         window.localStorage.setItem('userId', response.body.user._id);
         Cypress.env().token = response.body.token;
     });
-  });
+  }) 
+});
