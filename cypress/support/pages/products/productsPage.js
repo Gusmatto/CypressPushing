@@ -27,6 +27,8 @@ export class ProductsPage {
         this.firstName = 'firstName',
         this.lastName = 'lastName',
         this.cardNumber = 'cardNumber',
-        this.purchase = 'purchase'
+        this.purchase = 'purchase',
+        this.product1 = 'add-to-cart-7000787',
+        this.product2 = 'add-to-cart-8790434'
     }
 }

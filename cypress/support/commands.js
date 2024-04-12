@@ -29,7 +29,7 @@ Cypress.Commands.add('login', (username, password) => {
       },
     }).then(response => {
         window.localStorage.setItem('token', response.body.token);
-        window.localStorage.setItem('user', response.body.user.user);
+        window.localStorage.setItem('user', response.body.user.username);
         window.localStorage.setItem('userId', response.body.user._id);
         Cypress.env().token = response.body.token;
     });

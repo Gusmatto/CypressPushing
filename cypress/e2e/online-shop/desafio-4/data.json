@@ -17,5 +17,11 @@
         "subtotal": "$122",
         "freight": "Free",
         "totalPrice": "$122"
+    },
+    "checkout": {
+        "firstName": "Nabuco",
+        "lastName": "Donosor",
+        "cardNumber": 7705035734065027
+                      
     }
 }
