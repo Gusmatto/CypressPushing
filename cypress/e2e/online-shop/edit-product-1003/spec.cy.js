@@ -14,11 +14,16 @@ describe(`${scenarioName} - ${module}`, () => {
         cy.fixture(`${module}/${scenarioName}-${testCaseId}/data`).then(data => {
             cy.deleteProduct(data.product.id);
             cy.createProduct(data.product);
-            // cy.getProductById(data.product.id).then(cy.updateProductData(`${product._id}`, data.productUpdated))
-            
-            /* cy.getDataCy('onlineshoplink').click();
-            cy.getDataCy('search-type').select('ID');
-            cy.getDataCy('search-bar').type(`${data.product.id} {enter}`); */
+
+            cy.getProductByName(data.product.name).then((response) => {
+                cy.log('Response:', response);
+                const product = response.body;
+                cy.log('Product:', product);
+                // cy.updateProductData(product, data.productUpdated);
+              }); 
+              // cy.getProductByName(data.product.name).then(cy.updateProductData(product, data.productUpdated), () => {
+              
+              // });
         });
     });
 });
