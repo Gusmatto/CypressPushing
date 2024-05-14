@@ -1,6 +1,6 @@
 # Cypress Avanzado
 
-Welcome to the README for my project! This repository contains [description of your project].
+Welcome to the README for my project! This repository contains test cases for Pushing-IT app [https://pushing-it.vercel.app/].
 
 ## Cypress
 
