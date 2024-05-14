@@ -12,3 +12,4 @@ To install Cypress, you can use npm or yarn:
 
 ```bash
 npm install cypress --save-dev
+
