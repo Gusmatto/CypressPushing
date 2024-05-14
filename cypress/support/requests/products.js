@@ -25,10 +25,10 @@ Cypress.Commands.add('createProduct', (body) => {
     })
 });
 
-Cypress.Commands.add('getProductById', (id) => {
+Cypress.Commands.add('getProductByName', (name) => {
     cy.request({
         method: "GET",
-        url: `${Cypress.env().baseUrlApi}/products?id=${id}`,
+        url: `${Cypress.env().baseUrlApi}/products?name=${name}`,
         failsOnStatusCode: false,
         headers: {
             Authorization: `Bearer ${Cypress.env().token}`
@@ -41,7 +41,6 @@ Cypress.Commands.add('updateProductData', (product, body) => {
         method: "PUT",
         url: `${Cypress.env().baseUrlApi}/product/${product._id}`,
         body: body,
-        failsOnStatusCode: false,
         headers: {
             Authorization: `Bearer ${Cypress.env().token}`
         }

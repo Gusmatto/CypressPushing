@@ -30,8 +30,8 @@ describe(`${scenarioName} - ${module}`, () => {
             // cy.get(productPage.closeModalButton).click();
 
             // Search product
-            cy.getDataCy('search-type').select('id');
-            cy.getDataCy('search-bar').type(data.productID).type('{enter}');
+            cy.getDataCy(productPage.searchType).select('id');
+            cy.getDataCy(productPage.searchBar, {force: true}).type(data.productID).type('{enter}');
 
             // Delete product created
             cy.getDataCy('delete-5678').click( {force: true} );
@@ -39,8 +39,8 @@ describe(`${scenarioName} - ${module}`, () => {
             cy.get(productPage.deleteButton).click();
             cy.contains(`${data.productName} has been deleted`).should('be.visible');
             cy.get(productPage.closeModalButton).click();
-            cy.getDataCy('search-type').select('id');
-            cy.getDataCy('search-bar').clear().type(data.productID).type('{enter}');
+            cy.getDataCy(productPage.searchType).select('id');
+            cy.getDataCy(productPage.searchBar, {force: true}).clear().type(data.productID).type('{enter}');
             cy.get('p').contains('Zapatillas Negras').should('not.exist');
         });
     });
